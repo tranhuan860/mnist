@@ -49,11 +49,11 @@ weighted avg 1.00 1.00 1.00 10000
 
 - **Biểu đồ nhầm lẫn (Confusion Matrix):**
 
-  ![Confusion Matrix](image.png)
+  ![Confusion Matrix](image/image.png)
 
 - **Biểu đồ ROC Curve:**
 
-  ![ROC Curve](image-1.png)
+  ![ROC Curve](image/image-1.png)
 
 ---
 
