@@ -48,14 +48,16 @@ weighted avg 1.00 1.00 1.00 10000
 ## 📈 Hình ảnh minh họa
 
 - **Biểu đồ loss:**
+
 ![Loss](image/loss.png)
 
 - **Biểu đồ accuracy**
+
 ![Accuracy](image/accuracy.png)
 
 - **Biểu đồ nhầm lẫn (Confusion Matrix):**
 
-![Confusion Matrix](image/confusion_matrix.png)
+![Confusion Matrix](image/confusion_matrix_0.png)
 
 - **Biểu đồ ROC Curve:**
 
