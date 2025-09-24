@@ -1,16 +1,34 @@
-# 🧠 Mô hình CNN phân loại chữ số viết tay trên tập dữ liệu MNIST
+# 🧠 MÔ HÌNH CNN PHÂN LOẠI CHỮ SỐ VIẾT TAY – MNIST  
 
-## 📂 Tập dữ liệu
-- **MNIST** gồm 60.000 ảnh huấn luyện và 10.000 ảnh kiểm tra.
-- Mỗi ảnh kích thước **28x28 pixel**, ảnh grayscale.
+> Mô hình Convolutional Neural Network (CNN) huấn luyện trên tập dữ liệu **MNIST** để phân loại chữ số viết tay (0–9).  
+> README này trình bày chi tiết kết quả, báo cáo phân loại và các hình ảnh minh họa trực quan.  
 
-## 🎯 Kết quả tổng quan
-- **Accuracy**: 0.9961  
-- **Macro Precision**: 0.9961  
-- **Macro Recall**: 0.9961  
-- **Macro F1-score**: 0.9961  
+---
 
-## 📊 Kết quả theo từng lớp
+## 📂 1. Tập dữ liệu  
+
+- **Nguồn**: MNIST (Yann LeCun et al.).  
+- **Kích thước**:  
+  - 60.000 ảnh huấn luyện.  
+  - 10.000 ảnh kiểm tra.  
+- **Đặc điểm ảnh**:  
+  - Grayscale.  
+  - Kích thước **28×28 pixel**.  
+
+---
+
+## 🎯 2. Kết quả tổng quan  
+
+| Metric           | Giá trị |
+|-----------------|----------|
+| **Accuracy**    | 0.9961   |
+| **Macro Precision** | 0.9961   |
+| **Macro Recall**    | 0.9961   |
+| **Macro F1-score**  | 0.9961   |
+
+---
+
+## 📊 3. Kết quả theo từng lớp  
 
 | Lớp | Precision | Recall | F1-score |
 |-----|-----------|--------|----------|
@@ -27,7 +45,7 @@
 
 ---
 
-## 📝 Báo cáo phân loại chi tiết
+## 📝 4. Báo cáo phân loại chi tiết  
 
 | Lớp | Precision | Recall | F1-score | Support |
 |-----|-----------|--------|----------|---------|
@@ -48,28 +66,42 @@
 
 ---
 
-📌 **Ghi chú:**  
-- **Macro Avg** = trung bình cộng các lớp.  
-- **Weighted Avg** = trung bình có trọng số theo support từng lớp. 
-
-## 📈 Hình ảnh minh họa
-
-- **Biểu đồ loss:**
-
-![Loss](image/loss.png)
-
-- **Biểu đồ accuracy**
-
-![Accuracy](image/accuracy.png)
-
-- **Biểu đồ nhầm lẫn (Confusion Matrix):**
-
-![Confusion Matrix](image/confusion_matrix_0.png)
-
-- **Biểu đồ ROC Curve:**
-
-![ROC Curve](image/roc_curve.png)
+📌 **Chú thích:**  
+- **Macro Avg** = Trung bình cộng kết quả của tất cả các lớp.  
+- **Weighted Avg** = Trung bình có trọng số theo số lượng mẫu mỗi lớp.  
 
 ---
 
-✨ *Mô hình đạt độ chính xác cao nhờ kiến trúc CNN tối ưu, huấn luyện trên MNIST với các kỹ thuật regularization và augmentation hợp lý.*
+## 📈 5. Hình ảnh minh họa  
+
+### 🔹 Quá trình huấn luyện  
+
+- **Biểu đồ Loss:**
+
+  ![Loss](image/loss.png)
+
+- **Biểu đồ Accuracy:**
+
+  ![Accuracy](image/accuracy.png)
+
+### 🔹 Đánh giá mô hình  
+
+- **Ma trận nhầm lẫn (Confusion Matrix):**
+
+  ![Confusion Matrix](image/confusion_matrix_0.png)
+
+- **Đường cong ROC (ROC Curve):**
+
+  ![ROC Curve](image/roc_curve.png)
+
+---
+
+## ✨ 6. Nhận xét  
+
+> Mô hình CNN đạt **độ chính xác cao** nhờ:
+> - Kiến trúc tối ưu cho nhận dạng ảnh số viết tay.
+> - Sử dụng **regularization** và **data augmentation** hợp lý.
+> - Quy trình huấn luyện và đánh giá nhất quán trên tập MNIST.
+
+---
+
