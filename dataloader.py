@@ -2,6 +2,37 @@ import torch
 from torchvision import datasets, transforms
 from sklearn.model_selection import train_test_split
 from torch.utils.data import Subset, DataLoader
+import random
+import numpy as np
+def random_erase_4x4(img, erase_value=0):
+    """
+    img: torch.Tensor of shape [C, H, W]
+    erase_value: value to fill (default 0)
+    """
+    C, H, W = img.shape
+    
+    patch_h, patch_w = 4, 4  # size of erase region
+    if H < patch_h or W < patch_w:
+        return img  # skip if image too small
+    
+    # choose random top-left corner
+    top = random.randint(0, H - patch_h)
+    left = random.randint(0, W - patch_w)
+    
+    # zero out the patch
+    img[:, top:top+patch_h, left:left+patch_w] = erase_value
+    return img
+
+class RandomErase4x4:
+    def __init__(self, p=0.5, erase_value=0):
+        self.p = p
+        self.erase_value = erase_value
+        
+    def __call__(self, img):
+        if random.random() < self.p:
+            return random_erase_4x4(img, self.erase_value)
+        return img
+
 
 def load(
     data_dir='./data',
@@ -26,7 +57,8 @@ def load(
         ),
         transforms.RandomPerspective(distortion_scale=0.2, p=0.5),
         transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
+        transforms.Normalize((0.1307,), (0.3081,)),
+        RandomErase4x4(p=0.5, erase_value=0)
     ])
 
     val_transform = transforms.Compose([
