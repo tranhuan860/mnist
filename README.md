@@ -21,10 +21,10 @@
 
 | Metric           | Giá trị |
 |-----------------|----------|
-| **Accuracy**    | 0.9964   |
-| **Macro Precision** | 0.9964   |
+| **Accuracy**    | 0.9965   |
+| **Macro Precision** | 0.9965   |
 | **Macro Recall**    | 0.9964   |
-| **Macro F1-score**  | 0.9964   |
+| **Macro F1-score**  | 0.9965   |
 
 ---
 
